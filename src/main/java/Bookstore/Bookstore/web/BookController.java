@@ -12,5 +12,3 @@ public class BookController {
 		return "index";
 	}
 }
-
-//testimuutos
