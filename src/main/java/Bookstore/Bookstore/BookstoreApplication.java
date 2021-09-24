@@ -25,20 +25,20 @@ public class BookstoreApplication {
 	public CommandLineRunner bookDataDemo(BookRepository repository, CategoryRepository categoryRepository ) {
 		return (args) -> {
 			log.info("Save books and categories for sampledata");
-			repository.save(new Book("Kirja1", "Juho", 1994, "FI123", 12.43));
-			repository.save(new Book("Kirja2", "Pegi", 2000, "FI124", 20.20));
-			categoryRepository.save(new Category("Scifi"));
-			categoryRepository.save(new Category("Comic"));
+			Category category1 = new Category("Scifi");
+			categoryRepository.save(category1);
+			Category category2 = new Category("Cartoon");
+			categoryRepository.save(category2);
+
+			
+			repository.save(new Book("Kirja1", "Juho", 1994, "FI123", 12.43, category1));
+			repository.save(new Book("Kirja2", "Pegi", 2000, "FI124", 20.20, category2));
+
 			
 			log.info("fetch all books");
 			for (Book book : repository.findAll())
 			{
 				log.info(book.toString());
-			}
-			log.info("fetch all categories");
-			for (Category category: categoryRepository.findAll())
-			{
-				log.info(category.toString());
 			}
 		};
 	}

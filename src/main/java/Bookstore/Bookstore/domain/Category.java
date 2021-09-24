@@ -1,18 +1,25 @@
 package Bookstore.Bookstore.domain;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Category {
 	 @Id
 	 @GeneratedValue(strategy=GenerationType.AUTO)
-	 private Long id;
+	 private Long categoryid;
 	 private String name;
 	 
-	 public Category(){}
+	 @OneToMany
+	 private List<Book> books;
+	 
+	 
+	public Category(){}
 
 	public Category(String name) {
 		super();
@@ -20,24 +27,31 @@ public class Category {
 	}
 
 	public Long getId() {
-		return id;
+		return categoryid;
 	}
 
 	public String getName() {
 		return name;
 	}
+	
+	 public List<Book> getBooks() {
+		return books;
+	}
 
 	public void setId(Long id) {
-		this.id = id;
+		this.categoryid = id;
 	}
 
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	
+	public void setBooks(List<Book> books) {
+		this.books = books;
+	}
 	@Override
 	public String toString() {
-		return "Category [id=" + id + ", name=" + name + "]";
+		return "Category [id=" + categoryid + ", name=" + name + "]";
 	}
 	 
 	 
