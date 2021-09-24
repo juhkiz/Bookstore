@@ -20,6 +20,12 @@
 			<div style="clear: both; display: block; height: 10px;"></div>
 			<label for="year">Year</label>
 			<input type="text" id="year" th:field="*{year}" />
+			<div style= "clear: both; display: block; height: 10px;"></div>
+			<label for = "categlist">Category</label>
+			<select id = "categlist" th:field = "*{category}" class="form-control-sm">
+				<option th:each="categ: ${categories}" th:value="${categ.getId}" th:text="${categ.name}"></option>
+			</select>
+			
 			<div style="clear: both; display: block; height: 10px;"></div>
 			<input type="submit" value="Save" class="btn btn-success"></input>
 		</form>
