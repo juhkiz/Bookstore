@@ -23,7 +23,7 @@
 			<div style= "clear: both; display: block; height: 10px;"></div>
 			<label for = "categlist">Category</label>
 			<select id = "categlist" th:field = "*{category}" class="form-control-sm">
-				<option th:each="categ: ${categories}" th:value="${categ.getId}" th:text="${categ.name}"></option>
+				<option th:each="categ: ${categories}" th:value="${categ.categoryid}" th:text="${categ.name}"></option>
 			</select>
 			
 			<div style="clear: both; display: block; height: 10px;"></div>

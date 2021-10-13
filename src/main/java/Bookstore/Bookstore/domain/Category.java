@@ -29,7 +29,7 @@ public class Category {
 		this.name = name;
 	}
 
-	public Long getId() {
+	public Long getCategoryid() {
 		return categoryid;
 	}
 
@@ -41,7 +41,7 @@ public class Category {
 		return books;
 	}
 
-	public void setId(Long id) {
+	public void setCategoryid(Long id) {
 		this.categoryid = id;
 	}
 
