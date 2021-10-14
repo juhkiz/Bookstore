@@ -75,6 +75,7 @@ public class BookController {
     @RequestMapping(value = "/edit/{id}")
     public String editBook(@PathVariable("id") Long bookId, Model model){
     	model.addAttribute("book", repository.findById(bookId));
+    	model.addAttribute("categories", catRepository.findAll());
     	return "editbook";
     }
     @RequestMapping(value="/login")
